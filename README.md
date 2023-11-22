@@ -2,12 +2,12 @@
 
 This repository contains MySQL solutions for HackerRank SQL problems. The solutions are categorized into the following sections:
 
-1. **Basic Select:**
-2. **Advanced Select:**
-3. **Aggregation:**
-4. **Basic Join:**
-5. **Advanced Join:**
-6. **Alternative Queries:**
+1. **Basic Select**
+2. **Advanced Select**
+3. **Aggregation**
+4. **Basic Join**
+5. **Advanced Join**
+6. **Alternative Queries**
 
 ## How to Use
 
