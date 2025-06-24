@@ -51,4 +51,44 @@ select (count(city)-count(distinct city)) as difference
 from station;
 
 
+-- #10 Weather Observation Station 6 -- 
+select distinct city
+from station
+where city like 'a%' or city like 'e%' 
+or city like 'i%' or city like 'o%'
+or city like 'u%';
+-- ------------------------------------
+select distinct city
+from station
+where substr(city,1,1) in ('A','E','I','O','U');
+-- ------------------------------------
+select distinct city
+from station
+where left(city,1) in ('A','E','I','O','U');
+-- ------------------------------------
+select distinct city
+from station
+where regexp_like(city, '^[AEIOU]');
+
+
+-- #11 Weather Observation Station 8 --
+select distinct city
+from station
+where left(city,1) in ('A','E','I','O','U') and 
+right(city,1) in ('a','e','i','o','u');
+-- ------------------------------------
+select distinct city
+from station
+where regexp_like(city, '^[AEIOU]') and 
+regexp_like(city, '[AEIOU]$');
+-- ------------------------------------
+select distinct city
+from station
+where substr(city,1,1) in ('A','E','I','O','U')
+and substr(city, length(city), 1) in ('a','e','i','o','u');
+
+
+-- #12 
+
+
 
