@@ -88,7 +88,34 @@ where substr(city,1,1) in ('A','E','I','O','U')
 and substr(city, length(city), 1) in ('a','e','i','o','u');
 
 
--- #12 
+-- #12 Weather Observation Station 9 --
+select distinct city
+from station
+where left(city,1) not in ('A','E','I','O','U');
+-- ------------------------------------
+select distinct city
+from station
+where substr(city,1,1) not in ('A','E','I','O','U');
+-- ------------------------------------
+select distinct city
+from station
+where not regexp_like(city, '^[AEIOU]') ;
 
+
+-- #13 Weather Observation Station 10 --
+select distinct city
+from station 
+where right(city,1) not in ('a','e','i','o','u');
+-- -------------------------------------
+select distinct city
+from station 
+where substr(city, length(city),1) not in ('a','e','i','o','u');
+-- -------------------------------------
+select distinct city
+from station
+where not regexp_like(city, '[aeiou]$');
+
+
+-- #14
 
 
