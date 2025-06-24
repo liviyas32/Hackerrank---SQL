@@ -46,4 +46,9 @@ from station
 where mod(id,2) = 0;
 
 
--- 
+-- #9 Weather Observation Station 4 --
+select (count(city)-count(distinct city)) as difference
+from station;
+
+
+
