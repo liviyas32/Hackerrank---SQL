@@ -116,6 +116,54 @@ from station
 where not regexp_like(city, '[aeiou]$');
 
 
--- #14
+-- #14 Weather Observation Station 11 --
+select distinct city
+from station
+where not regexp_like(city, '^[AEIOUaeiou]') or not regexp_like(city, '[AEIOUaeiou]$');
+-- -------------------------------------
+select distinct city
+from station
+where left(city,1) not in ('A','E','I','O','U') or
+right(city,1) not in ('a','e','i','o','u');
+-- -------------------------------------
+select distinct city
+from station
+where substr(city,1,1) not in ('A','E','I','O','U') or 
+substr(city,length(city),1) not in ('a','e','i','o','u');
 
 
+-- #15 Weather Observation Station 12 --
+select distinct city
+from station
+where not regexp_like(city, '^[AEIOUaeiou]') and 
+not regexp_like(city, '[AEIOUaeiou]$');
+-- --------------------------------------
+select distinct city
+from station
+where left(city,1) not in ('A','E','I','O','U') and
+right(city,1) not in ('a','e','i','o','u');
+-- --------------------------------------
+select distinct city
+from station
+where substr(city,1,1) not in ('A','E','I','O','U') and
+substr(city,length(city),1) not in ('a','e','i','o','u');
+
+
+-- #16 Higher Than 75 Marks --
+select name
+from students
+where marks>75
+order by right(name,3),id asc;
+
+
+-- #17 Employee Names -- 
+select name
+from employee
+order by name asc;
+
+
+-- #18 Employee Salaries --
+select name
+from employee
+where (salary>2000) and (months<10)
+order by employee_id asc;
