@@ -170,4 +170,11 @@ order by employee_id asc;
 
 
 -- #19 Type of Triangle --
-
+select case
+when A+B <= C or B+C <= A or A+C <= C then 'Not A Triangle'
+when A=B and A=C then 'Equilateral'
+when A=B or B=C or A=C then 'Isosceles'
+else 'Scalene'
+end
+from triangles;
+-- -----------------------
