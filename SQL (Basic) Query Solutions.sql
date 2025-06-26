@@ -177,4 +177,50 @@ when A=B or B=C or A=C then 'Isosceles'
 else 'Scalene'
 end
 from triangles;
--- -----------------------
+
+
+-- #20 The PADS --
+select concat(name,'(',upper(left(occupation,1)),')')
+from occupations
+order by name asc;
+select concat('There are a total of ',count(occupation),' ', lower(occupation),'s.')
+from occupations
+group by occupation
+order by count(occupation), occupation asc;
+
+
+-- #21 Revising Aggregations - The Count Function -- 
+select count(name)
+from city
+where population>100000;
+
+
+-- #22 Revising Aggregations - The Sum Function --
+select sum(population)
+from city
+where district like '%California%';
+
+
+-- #23 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
