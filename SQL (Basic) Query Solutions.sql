@@ -223,7 +223,13 @@ select max(population)-min(population)
 from city;
 
 
--- 
+-- #26 The Blunder --
+select ceil(avg(salary) - avg(replace(salary,'0','')))
+from employees;
+
+
+-- #27
+
 
 
 
