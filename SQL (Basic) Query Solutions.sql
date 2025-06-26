@@ -201,7 +201,29 @@ from city
 where district like '%California%';
 
 
--- #23 
+-- #23 Revising Aggregations - Averages --
+select avg(population)
+from city
+where district = 'California';
+
+
+-- #23 Average Population --
+select round(avg(population),0)
+from city;
+
+
+-- #24 Japan Population --
+select sum(population)
+from city
+where countrycode = 'JPN';
+
+
+-- #25 Population Density Difference --
+select max(population)-min(population)
+from city;
+
+
+-- 
 
 
 
