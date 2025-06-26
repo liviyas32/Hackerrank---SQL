@@ -228,7 +228,14 @@ select ceil(avg(salary) - avg(replace(salary,'0','')))
 from employees;
 
 
--- #27
+-- #27 Top Earners --
+select months*salary, count(employee_id)
+from employee
+where months*salary = (select max(months*salary) from employee)
+group by months*salary;
+
+
+-- #28 
 
 
 
