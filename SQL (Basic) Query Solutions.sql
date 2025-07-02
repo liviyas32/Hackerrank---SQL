@@ -280,7 +280,16 @@ where lat_n = (select min(lat_n)
               where lat_n>38.7780);
 
 
--- #
+-- #34 Weather Observation Station 18 --
+with dis as 
+(select min(lat_n) as a, min(long_w) as b, max(lat_n) as c, max(long_w) as d
+from station)
+
+select round(abs(a-c)+abs(b-d),4) as man_dis
+from dis; 
+
+
+-- #35 
 
 
 
