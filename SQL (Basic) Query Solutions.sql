@@ -299,7 +299,27 @@ select round(sqrt(power(b-a,2)+power(d-c,2)),4)
 from dis;
 
 
--- #36 
+-- #36 Population Census -- 
+select sum(ci.population)
+from city as ci join country as co
+on ci.countrycode = co.code
+where continent = "Asia";
+
+
+-- #37 African Cities --
+select ci.name
+from city as ci join country as co
+on ci.countrycode = co.code
+where co.continent = 'Africa';
+
+
+-- #38 Average Population of Each Continent -- 
+select co.continent, floor(avg(ci.population))
+from city as ci join country as co
+on ci.countrycode=co.code
+group by co.continent;
+
+
 
 
 
