@@ -289,7 +289,17 @@ select round(abs(a-c)+abs(b-d),4) as man_dis
 from dis; 
 
 
--- #35 
+-- #35 Weather Observation Station 19 -- 
+with dis as 
+(select min(lat_n) as a, max(lat_n) as b, min(long_w) as c, 
+ max(long_w) as d
+from station)
+
+select round(sqrt(power(b-a,2)+power(d-c,2)),4)
+from dis;
+
+
+-- #36 
 
 
 
