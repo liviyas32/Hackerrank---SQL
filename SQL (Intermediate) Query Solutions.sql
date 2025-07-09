@@ -35,3 +35,13 @@ row_number() over(order by lat_n desc) as descend
 from station
 order by lat_n asc) as X
 where ascend = descend;
+
+
+-- #4 The Report --
+select if(grade>=8,name,'NULL'),grade,marks
+from students join grades
+on students.marks >=grades.min_mark and students.marks<=grades.max_mark
+order by grade desc, name asc, marks asc;
+
+
+-- #5
