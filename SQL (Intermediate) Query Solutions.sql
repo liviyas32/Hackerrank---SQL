@@ -27,4 +27,11 @@ group by c.company_code, c.founder
 order by c.company_code asc;
 
 
--- #
+-- #3 Weather Observation Station 20 --
+select latn
+from
+(select round(lat_n,4) as latn , row_number() over(order by lat_n asc) as ascend, 
+row_number() over(order by lat_n desc) as descend
+from station
+order by lat_n asc) as X
+where ascend = descend;
